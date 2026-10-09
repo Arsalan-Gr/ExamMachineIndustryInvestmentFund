@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ExamMachineIndustryInvestmentFund.WebApi/ExamMachineIndustryInvestmentFund.WebApi.csproj" />
+  <Project Path="ExamMachineIndustryInvestmentFund.Application/ExamMachineIndustryInvestmentFund.Application.csproj" />
+  <Project Path="ExamMachineIndustryInvestmentFund.Domain/ExamMachineIndustryInvestmentFund.Core.csproj" />
+  <Project Path="ExamMachineIndustryInvestmentFund.Infrastructure/ExamMachineIndustryInvestmentFund.Infrastructure.csproj" />
+</Solution>

@@ -1,0 +1,6 @@
+@ExamMachineIndustryInvestmentFund.Api_HostAddress = http://localhost:5074
+
+GET {{ExamMachineIndustryInvestmentFund.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
