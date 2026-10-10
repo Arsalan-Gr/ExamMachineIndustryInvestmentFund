@@ -4,6 +4,8 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import CreateRequestPage from "./pages/CreateRequestPage";
+import MyRequestListPage from "./pages/MyRequestListPage";
 
 export default function App() {
   return (
@@ -19,14 +21,8 @@ export default function App() {
 
         {/* Employee */}
         <Route element={<ProtectedRoute allowedRoles={["Employee"]} />}>
-          <Route
-            path="/requests/create"
-            element={<PlaceholderPage title="Create Request" />}
-          />
-          <Route
-            path="/requests/my"
-            element={<PlaceholderPage title="My Requests" />}
-          />
+          <Route path="/requests/create" element={<CreateRequestPage />} />
+          <Route path="/requests/my" element={<MyRequestListPage />} />
         </Route>
 
         {/* Manager and Finance */}
@@ -35,7 +31,7 @@ export default function App() {
         >
           <Route
             path="/requests/assigned"
-            element={<PlaceholderPage title="Assigned Requests" />}
+            element={<MyRequestListPage assigned />}
           />
           <Route
             path="/requests/review"

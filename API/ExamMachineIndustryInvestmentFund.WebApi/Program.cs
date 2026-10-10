@@ -63,8 +63,20 @@ builder.Services
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactUI", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
+
+app.UseCors("ReactUI");
+
 await IdentitySeeder.SeedRolesAsync(app.Services);
 
 // Configure the HTTP request pipeline.
