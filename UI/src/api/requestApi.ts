@@ -7,12 +7,6 @@ export interface CreateRequestDto {
 }
 
 export async function createRequest(dto: CreateRequestDto): Promise<void> {
-  if (import.meta.env.VITE_MOCK_REQUESTS === "true") {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    console.log("MOCK request created:", dto);
-    return;
-  }
-
   await api.post("/requests", dto);
 }
 
@@ -58,4 +52,12 @@ export async function getRequests(
   });
 
   return response.data;
+}
+
+export async function approveRequest(id: string): Promise<void> {
+  await api.post(`/requests/${encodeURIComponent(id)}/approve`);
+}
+
+export async function rejectRequest(id: string): Promise<void> {
+  await api.post(`/requests/${encodeURIComponent(id)}/reject`);
 }

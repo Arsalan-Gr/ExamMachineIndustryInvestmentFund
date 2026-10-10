@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import ProtectedRoute from "./components/ProtectedRoute";
-import PlaceholderPage from "./pages/PlaceholderPage";
 import CreateRequestPage from "./pages/CreateRequestPage";
 import MyRequestListPage from "./pages/MyRequestListPage";
+import ReviewRequestsPage from "./pages/ReviewRequestsPage";
 
 export default function App() {
   return (
@@ -33,10 +33,7 @@ export default function App() {
             path="/requests/assigned"
             element={<MyRequestListPage assigned />}
           />
-          <Route
-            path="/requests/review"
-            element={<PlaceholderPage title="Approve / Reject" />}
-          />
+          <Route path="/requests/review" element={<ReviewRequestsPage />} />
         </Route>
 
         {/* Fallback */}
